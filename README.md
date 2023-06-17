@@ -57,8 +57,8 @@ Feel free to modify these files based on your project requirements.
 
 ## Usage
 
-1. Register a new user by sending a `POST` request to `/api/v1/auth/register` with the required information.
-2. Obtain an access token by sending a `POST` request to `/api/v1/auth/login` with the user credentials. The response will include the access token.
+1. Register a new user by sending a `POST` request to `auth/register` with the required information.
+2. Obtain an access token by sending a `POST` request to `auth/login` with the user credentials. The response will include the access token.
 3. Include the access token in the `Authorization` header of subsequent requests as a bearer token (`Authorization: Bearer <access_token>`).
 4. Access the protected endpoints by providing the valid access token.
 
