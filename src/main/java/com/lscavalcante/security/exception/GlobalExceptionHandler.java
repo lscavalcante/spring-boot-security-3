@@ -90,6 +90,7 @@ public class GlobalExceptionHandler {
         Map<String, Object> errorResponse = new HashMap<>();
         errorResponse.put("message", errorMessage);
         errorResponse.put("timestamp", timestamp);
+        errorResponse.put("code", "handleException");
 
         ObjectMapper objectMapper = new ObjectMapper();
         String jsonPayload;
