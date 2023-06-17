@@ -4,6 +4,7 @@ import com.lscavalcante.security.config.JwtService;
 import com.lscavalcante.security.dto.RegisterDTO;
 import com.lscavalcante.security.dto.SignInDTO;
 import com.lscavalcante.security.dto.TokenDTO;
+import com.lscavalcante.security.dto.UserDTO;
 import com.lscavalcante.security.exception.NotFoundException;
 import com.lscavalcante.security.exception.RecordNotFoundException;
 import com.lscavalcante.security.model.Role;
@@ -72,6 +73,16 @@ public class UserService {
         } catch (Exception e) {
             throw e;
         }
+    }
+
+    public List<UserDTO> listAll() {
+            try {
+                List<UserDTO> usersDTO = userRepository.findAll().stream().map((e) -> new UserDTO(e.getId(), e.getEmail(), e.getFirstname())).toList();
+
+                return usersDTO;
+            } catch (Exception e) {
+                throw e;
+            }
     }
 
 
